@@ -5,6 +5,8 @@ env_path="/home/nidzo/.config/dotfiles/zsh/.env"
 
 export EDITOR="code --wait" # Ctrl + x Ctrl + e
 export FCEDIT=nvim          # fc in cli
+export ZYPP_PCK_PRELOAD=1
+export ZYPP_CURL2=1
 
 # set zinit dir
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share/zinit/zinit.git}"
@@ -58,7 +60,3 @@ alias dotfiles="code ~/.config/dotfiles"
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-# source <(COMPLETE=zsh dev)
-
-# zsh parameter completion for the dotnet CLI
-source <(COMPLETE=zsh dev)

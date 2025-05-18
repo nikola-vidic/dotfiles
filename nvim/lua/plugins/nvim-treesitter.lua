@@ -18,6 +18,7 @@ local config = function()
             "python",
             "rust",
             "yaml",
+            "bash"
         },
         auto_install = true,
         highlight = {

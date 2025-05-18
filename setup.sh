@@ -91,13 +91,15 @@ fi
 if type "code" &>/dev/null; then
     extensions=(
         albert.tabout
-        asvetliakov.vscode-neovim
+        bierner.markdown-mermaid
         christian-kohler.path-intellisense
         davidanson.vscode-markdownlint
-        dcasella.i3
+        docker.docker
         foxundermoon.shell-format
         james-yu.latex-workshop
         mads-hartmann.bash-ide-vscode
+        ms-azuretools.vscode-containers
+        pflannery.vscode-versionlens
         pkief.material-icon-theme
         redhat.vscode-yaml
         rogalmic.bash-debug
@@ -111,9 +113,11 @@ if type "code" &>/dev/null; then
         yy0931.save-as-root
         yzhang.markdown-all-in-one
     )
+
     for extension in "${extensions[@]}"; do
         code --install-extension "$extension"
     done
+
 fi
 
 ###########################
@@ -161,3 +165,6 @@ sudo rpm --import linux_signing_key.pub
 sudo zypper addrepo http://dl.google.com/linux/chrome/rpm/stable/x86_64 Google-Chrome
 sudo zypper refresh
 sudo zypper install google-chrome-stable
+
+export ZYPP_PCK_PRELOAD=1
+export ZYPP_CURL2=1

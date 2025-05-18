@@ -30,3 +30,9 @@ nmcli device wifi connect <AP name> password <password>
 ```bash
 sudo nmcli device connect wlp9s0
 ```
+
+## Rust
+
+```bash
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
