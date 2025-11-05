@@ -1,0 +1,145 @@
+{
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+    // editor
+    "editor.fontSize": 12,
+    "editor.cursorBlinking": "solid",
+    "editor.detectIndentation": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.minimap.enabled": false,
+    "editor.semanticHighlighting.enabled": true,
+    "editor.smoothScrolling": true,
+    "editor.wordWrap": "bounded",
+    "editor.wordWrapColumn": 1000,
+    "editor.unicodeHighlight.includeComments": true,
+    "editor.unicodeHighlight.nonBasicASCII": true,
+    "editor.fontFamily": "Hack Nerd Font Mono",
+    "editor.cursorSurroundingLines": 10,
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.autoClosingBrackets": "always",
+    "editor.guides.indentation": true,
+    "editor.renderWhitespace": "none",
+    "editor.accessibilitySupport": "off",
+    "editor.lineNumbers": "relative",
+    // diffEditor
+    "diffEditor.ignoreTrimWhitespace": false,
+    "diffEditor.renderSideBySide": true,
+    //  explorer
+    "explorer.compactFolders": false,
+    "explorer.incrementalNaming": "smart",
+    //  files
+    "files.eol": "\n",
+    "files.trimTrailingWhitespace": true,
+    "files.trimFinalNewlines": true,
+    "files.insertFinalNewline": true,
+    // appearance
+    "window.commandCenter": false,
+    "window.density.editorTabHeight": "compact",
+    "window.restoreWindows": "none",
+    "window.menuBarVisibility": "hidden",
+    //  workbench/style
+    "workbench.editor.showTabs": "multiple",
+    "workbench.startupEditor": "none",
+    "workbench.editor.decorations.badges": true,
+    "workbench.editor.decorations.colors": true,
+    "workbench.editor.wrapTabs": true,
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "Kanagawa",
+    "workbench.list.smoothScrolling": true,
+    "workbench.secondarySideBar.defaultVisibility": "hidden",
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook",
+        "*.pdf": "default",
+    },
+    // terminal
+    "terminal.integrated.showExitAlert": false,
+    "terminal.integrated.tabs.enabled": false,
+    "terminal.integrated.enablePersistentSessions": false,
+    "terminal.integrated.scrollback": 10000,
+    "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
+    "terminal.integrated.fontSize": 12,
+    "terminal.external.windowsExec": "wt.exe",
+    "terminal.integrated.cursorStyle": "block",
+    "terminal.integrated.stickyScroll.enabled": false,
+    "terminal.integrated.enableMultiLinePasteWarning": "never",
+    // security
+    "security.workspace.trust.banner": "never",
+    "security.workspace.trust.enabled": false,
+    "redhat.telemetry.enabled": false,
+    "telemetry.feedback.enabled": false,
+    "chat.agent.enabled": false,
+    "chat.commandCenter.enabled": false,
+    "chat.disableAIFeatures": true,
+    "gitlab.real-timeSecurityScan.scanFileOnSave": false,
+    "gitlab.duoChat.enabled": false,
+    "gitlab.duoCodeSuggestions.enabled": false,
+    "gitlab.duoAgentPlatform.enabled": false,
+    "gitlab.duo.enabledWithoutGitlabProject": false,
+    // remote
+    "remote.SSH.experimental.chat": false,
+    "remote.autoForwardPortsSource": "hybrid",
+    // docker
+    "docker.extension.enableComposeLanguageServer": false,
+    "[dockercompose]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.autoIndent": "advanced",
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    // powershell
+    "powershell.codeFormatting.useCorrectCasing": true,
+    "powershell.codeFormatting.autoCorrectAliases": true,
+    "powershell.codeFormatting.ignoreOneLineBlock": false,
+    "powershell.pester.useLegacyCodeLens": false,
+    "powershell.integratedConsole.suppressStartupBanner": true,
+    "powershell.integratedConsole.focusConsoleOnExecute": false,
+    "powershell.integratedConsole.showOnStartup": false,
+    "powershell.scriptAnalysis.enable": true,
+    // rust
+    "rust-analyzer.inlayHints.typeHints.enable": false,
+    "rust-analyzer.inlayHints.chainingHints.enable": false,
+    "rust-analyzer.inlayHints.renderColons": false,
+    "rust-analyzer.inlayHints.closureStyle": "hide",
+    "rust-analyzer.inlayHints.parameterHints.enable": false,
+    "rust-analyzer.inlayHints.genericParameterHints.const.enable": false,
+    "rust-analyzer.inlayHints.closingBraceHints.enable": false,
+    "rust-analyzer.check.command": "clippy",
+    "rust-analyzer.testExplorer": true,
+    "rust-analyzer.cargo.targetDir": "target/analyzer",
+    "rust-analyzer.cargo.extraEnv": {
+        "RUSTC_BOOTSTRAP": "1",
+    },
+    "rust-analyzer.runnables.extraEnv": {
+        "RUSTC_BOOTSTRAP": "1",
+    },
+    // Python
+    "[python]": {
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        "editor.formatOnPaste": false,
+        "editor.formatOnSave": false,
+    },
+    "python.analysis.diagnosticMode": "workspace",
+    // yaml
+    "[yaml]": {
+        "editor.formatOnPaste": false,
+        "editor.formatOnSave": false,
+    },
+    "yaml.customTags": [
+        "!reference sequence"
+    ],
+    "yaml.format.singleQuote": true,
+    // markdown
+    "markdown.preview.scrollEditorWithPreview": false,
+    "markdown.preview.scrollPreviewWithEditor": false,
+    "[markdown]": {
+        "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+    },
+    // shell
+    "[shellscript]": {
+        "editor.defaultFormatter": "foxundermoon.shell-format"
+    },
+    "workbench.settings.editor": "json",
+    "powershell.pester.codeLens": false,
+}

@@ -1,0 +1,6 @@
+Modules/
+Scripts/
+InstalledScriptInfos/
+env.ps1
+errors.log
+tmp*

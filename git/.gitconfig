@@ -1,0 +1,53 @@
+[user]
+    name = nidzo
+    email = 16163816+ndz-v@users.noreply.github.com
+[core]
+    autocrlf = false
+    editor = code --wait
+    excludesFile = C:\\Users\\vidic_n\\.config\\git\\.gitignore
+    # pager = delta
+[merge]
+    tool = vscode
+    conflictstyle = diff3
+[mergetool "vscode"]
+    cmd = code --wait $MERGED
+[diff]
+    tool = vscode
+    algorithm = histogram
+    colorMoved = default
+    mnemonicPrefix = true
+    renames = true
+[difftool "vscode"]
+    cmd = code --wait --diff $LOCAL $REMOTE
+[color "status"]
+    added = green bold
+    updated = green bold
+    changed = green
+    untracked = cyan bold
+    branch = yellow black bold ul
+[remote "origin"]
+    prune = true
+[fetch]
+    prune = true
+[pull]
+    rebase = true
+[rebase]
+    autosquash = true
+    autostash = true
+[push]
+    default = current
+[safe]
+    directory = *
+[interactive]
+    # diffFilter = delta --color-only
+[delta]
+    navigate = true
+    light = false
+[tag]
+    sort = taggerdate
+[branch]
+    sort = -committerdate
+[log]
+    date = iso
+[url "git@gitlab.dev.de.uhlmann-net.de:"]
+    insteadOf = http://gitlab.dev.de.uhlmann-net.de/
