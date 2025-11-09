@@ -34,6 +34,11 @@
     "files.trimTrailingWhitespace": true,
     "files.trimFinalNewlines": true,
     "files.insertFinalNewline": true,
+    "files.associations": {
+        "*.csproj": "msbuild",
+        "*.targets": "msbuild",
+        "*.props": "msbuild",
+    },
     // appearance
     "window.commandCenter": false,
     "window.density.editorTabHeight": "compact",
@@ -142,4 +147,6 @@
     },
     "workbench.settings.editor": "json",
     "powershell.pester.codeLens": false,
+    "testing.resultsView.layout": "treeLeft",
+    "workbench.panel.showLabels": false,
 }
