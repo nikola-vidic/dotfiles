@@ -98,8 +98,6 @@ if vim.g.vscode then
 		{ { "n", "v" }, "<leader>m",  "workbench.action.toggleSidebarVisibility" },
 		{ { "n", "v" }, "<leader>o",  "workbench.action.openRecent" },
 		{ { "n", "v" }, "<leader>q",  "workbench.action.quickTextSearch" },
-		{ { "v" },      "b",          "cursorWordPartLeftSelect" },
-		{ { "v" },      "w",          "cursorWordPartRightSelect" },
 		{ { "v" },      "<leader>p",  "PowerShell.RunSelection" },
 	}
 
