@@ -16,25 +16,28 @@ Describe "Modules" {
 
 BeforeDiscovery {
     $table = @(
-        @{ path = "$env:APPDATA\Code\User\keybindings.json" ; target = "$env:USERPROFILE\.config\dotfiles\vscode\keybindings.json" }
-        @{ path = "$env:APPDATA\Code\User\settings.json" ; target = "$env:USERPROFILE\.config\dotfiles\vscode\settings.json" }
-        @{ path = "$env:LOCALAPPDATA\nvim" ; target = "$env:USERPROFILE\.config\dotfiles\nvim" }
-        @{ path = "$env:USERPROFILE\.config\starship.toml" ; target = "$env:USERPROFILE\.config\dotfiles\starship\starship.toml" }
-        @{ path = "$env:USERPROFILE\.gitconfig" ; target = "$env:USERPROFILE\.config\dotfiles\git\.gitconfig" }
-        @{ path = "$env:USERPROFILE\.glzr" ; target = "$env:USERPROFILE\.config\dotfiles\glzr" }
-        @{ path = "$env:USERPROFILE\Documents\PowerShell" ; target = "$env:USERPROFILE\.config\dotfiles\PowerShell" }
+        @{ Path = "$env:APPDATA\Code\User\keybindings.json" ; Target = "$env:USERPROFILE\.config\dotfiles\vscode\keybindings.json" }
+        @{ Path = "$env:APPDATA\Code\User\settings.json" ; Target = "$env:USERPROFILE\.config\dotfiles\vscode\settings.json" }
+        @{ Path = "$env:LOCALAPPDATA\nvim" ; Target = "$env:USERPROFILE\.config\dotfiles\nvim" }
+        @{ Path = "$env:USERPROFILE\.config\starship.toml" ; Target = "$env:USERPROFILE\.config\dotfiles\starship\starship.toml" }
+        @{ Path = "$env:USERPROFILE\.gitconfig" ; Target = "$env:USERPROFILE\.config\dotfiles\git\.gitconfig" }
+        @{ Path = "$env:USERPROFILE\.glzr" ; Target = "$env:USERPROFILE\.config\dotfiles\glzr" }
+        @{ Path = "$env:USERPROFILE\Documents\PowerShell" ; Target = "$env:USERPROFILE\.config\dotfiles\PowerShell" }
     )
+
+    foreach ($item in $table) {
+        $item.Name = Split-Path -Leaf $item.Path
+    }
 }
 
 Describe "Symbolic Links" {
-    Context "<path>" -ForEach $table {
+    Context "<name>" -ForEach $table {
         BeforeEach {
             New-Item -ItemType SymbolicLink -Path $path -Target $target -Force
         }
         It "created" {
             Test-Path $target | Should -Be $true
         }
-
     }
 }
 

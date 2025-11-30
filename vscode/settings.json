@@ -77,11 +77,6 @@
     "chat.agent.enabled": false,
     "chat.commandCenter.enabled": false,
     "chat.disableAIFeatures": true,
-    "gitlab.real-timeSecurityScan.scanFileOnSave": false,
-    "gitlab.duoChat.enabled": false,
-    "gitlab.duoCodeSuggestions.enabled": false,
-    "gitlab.duoAgentPlatform.enabled": false,
-    "gitlab.duo.enabledWithoutGitlabProject": false,
     // remote
     "remote.SSH.experimental.chat": false,
     "remote.autoForwardPortsSource": "hybrid",
@@ -102,6 +97,8 @@
     "powershell.integratedConsole.focusConsoleOnExecute": false,
     "powershell.integratedConsole.showOnStartup": false,
     "powershell.scriptAnalysis.enable": true,
+    "powershell.pester.codeLens": false,
+    "powershell.integratedConsole.startInBackground": true,
     // rust
     "rust-analyzer.inlayHints.typeHints.enable": false,
     "rust-analyzer.inlayHints.chainingHints.enable": false,
@@ -146,7 +143,6 @@
         "editor.defaultFormatter": "foxundermoon.shell-format"
     },
     "workbench.settings.editor": "json",
-    "powershell.pester.codeLens": false,
     "testing.resultsView.layout": "treeLeft",
     "workbench.panel.showLabels": false,
 }
