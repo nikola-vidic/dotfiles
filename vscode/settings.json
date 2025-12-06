@@ -119,14 +119,14 @@
     // Python
     "[python]": {
         "editor.defaultFormatter": "charliermarsh.ruff",
-        "editor.formatOnPaste": false,
-        "editor.formatOnSave": false,
+        "editor.formatOnPaste": true,
+        "editor.formatOnSave": true,
     },
     "python.analysis.diagnosticMode": "workspace",
     // yaml
     "[yaml]": {
-        "editor.formatOnPaste": false,
-        "editor.formatOnSave": false,
+        "editor.formatOnPaste": true,
+        "editor.formatOnSave": true,
     },
     "yaml.customTags": [
         "!reference sequence"
