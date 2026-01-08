@@ -69,6 +69,7 @@
     "terminal.integrated.cursorStyle": "block",
     "terminal.integrated.stickyScroll.enabled": false,
     "terminal.integrated.enableMultiLinePasteWarning": "never",
+    "terminal.integrated.suggest.enabled": false,
     // security
     "security.workspace.trust.banner": "never",
     "security.workspace.trust.enabled": false,
@@ -144,5 +145,6 @@
     },
     "workbench.settings.editor": "json",
     "testing.resultsView.layout": "treeLeft",
-    "workbench.panel.showLabels": false,
+    "problems.sortOrder": "position",
+    "problems.autoReveal": false,
 }
