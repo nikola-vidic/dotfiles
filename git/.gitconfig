@@ -1,11 +1,10 @@
 [user]
-    name = nidzo
-    email = 16163816+ndz-v@users.noreply.github.com
+	name = nidzo
+	email = 16163816+ndz-v@users.noreply.github.com
 [core]
     autocrlf = false
-    editor = code --wait
-    excludesFile = C:\\Users\\vidic_n\\.config\\git\\.gitignore
-    # pager = delta
+	editor = code --wait
+	excludesfile = "~/.config/dotfiles/.gitignore"
 [merge]
     tool = vscode
     conflictstyle = diff3
@@ -49,5 +48,3 @@
     sort = -committerdate
 [log]
     date = iso
-[url "git@gitlab.dev.de.uhlmann-net.de:"]
-    insteadOf = http://gitlab.dev.de.uhlmann-net.de/

@@ -147,4 +147,5 @@
     "testing.resultsView.layout": "treeLeft",
     "problems.sortOrder": "position",
     "problems.autoReveal": false,
+    "terminal.integrated.initialHint": false,
 }
