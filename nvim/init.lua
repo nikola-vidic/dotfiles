@@ -84,6 +84,7 @@ if vim.g.vscode then
 		{ { "n" },      "<leader>g",  "currentBranchInfo.focus" },
 		{ { "n" },      "<leader>r",  "editor.action.rename" },
 		{ { "n" },      "<leader>tt", "testing.runAtCursor" },
+		{ { "n" },      "<leader>b",  "workbench.action.tasks.build" },
 		{ { "n" },      "<S-Tab>",    "workbench.action.previousEditorInGroup" },
 		{ { "n" },      "<Tab>",      "workbench.action.nextEditorInGroup" },
 		{ { "n" },      "b",          "cursorWordPartLeft" },

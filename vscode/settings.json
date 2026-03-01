@@ -148,4 +148,5 @@
     "problems.sortOrder": "position",
     "problems.autoReveal": false,
     "terminal.integrated.initialHint": false,
+    "rust-analyzer.runnables.askBeforeUpdateTest": false,
 }

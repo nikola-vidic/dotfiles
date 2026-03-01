@@ -46,7 +46,7 @@ else
 end
 -- require("lazy").setup(plugins, options)
 require("lazy").setup({
-	spec = plugins,
+	spec = { import = "plugins" },
 	-- automatically check for plugin updates
 	checker = { enabled = false },
 })

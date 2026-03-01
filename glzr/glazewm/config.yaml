@@ -271,7 +271,7 @@ keybindings:
 
   - commands:
       [
-        'shell-exec wt -w 0 nt wsl --distribution-id {565e4331-3df7-4f64-aa01-678c2fe13841} --cd ~',
+        'shell-exec wt -w 0 nt wsl --distribution-id {ab06bb8d-533d-426c-88d1-37bb184f59f7} --cd ~',
       ]
     bindings: ['alt+shift+enter']
 
