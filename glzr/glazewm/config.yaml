@@ -165,12 +165,6 @@ keybindings:
   - commands:
       ['shell-exec C:\Program Files\Google\Chrome\Application\chrome.exe']
     bindings: ['alt+g']
-  # Open Private Chrome Browser
-  - commands:
-      [
-        'shell-exec C:\Program Files\Google\Chrome\Application\chrome.exe --private',
-      ]
-    bindings: ['alt+shift+g']
   # Open incognito Chrome Browser
   - commands:
       [

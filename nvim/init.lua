@@ -40,6 +40,12 @@ vim.opt.splitbelow = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
+-- Sets how neovim will display certain whitespace characters in the editor.
+--  See `:help 'list'`
+--  and `:help 'listchars'`
+vim.opt.list = true
+vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+
 local opts = { noremap = true, silent = true }
 
 -- window movement
@@ -47,6 +53,14 @@ vim.api.nvim_set_keymap("n", "<C-h>", "<C-w>h", { noremap = false })
 vim.api.nvim_set_keymap("n", "<C-j>", "<C-w>j", { noremap = false })
 vim.api.nvim_set_keymap("n", "<C-k>", "<C-w>k", { noremap = false })
 vim.api.nvim_set_keymap("n", "<C-l>", "<C-w>l", { noremap = false })
+
+-- Always show relative line numbers
+vim.opt.number = true
+vim.opt.relativenumber = true
+-- Keep signcolumn on by default
+vim.opt.signcolumn = "yes"
+-- Don't show the mode, since it's already in the status line
+vim.opt.showmode = false
 
 local common_mappings = {
 	-- { { 'v', }, 'p',     '_dP' },
@@ -109,20 +123,6 @@ if vim.g.vscode then
 		end)
 	end
 else
-	-- Sets how neovim will display certain whitespace characters in the editor.
-	--  See `:help 'list'`
-	--  and `:help 'listchars'`
-	vim.opt.list = true
-	vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
-
-	-- Always show relative line numbers
-	vim.opt.number = true
-	vim.opt.relativenumber = true
-	-- Keep signcolumn on by default
-	vim.opt.signcolumn = "yes"
-	-- Don't show the mode, since it's already in the status line
-	vim.opt.showmode = false
-
 	local mappings = {
 		{ { "n" },      "<C-d>",      "<C-d>zz" },
 		{ { "n" },      "<C-u>",      "<C-u>zz" },
@@ -138,15 +138,12 @@ else
 		vim.keymap.set(mode, key, command, opts)
 	end
 
-	vim.keymap.set("n", "gl", function()
-		vim.diagnostic.open_float()
-	end, { desc = "Open Diagnostics in Float" })
+	vim.pack.add {
+		"https://github.com/neovim/nvim-lspconfig",
+		"https://github.com/stevearc/oil.nvim",
+	}
 
-	vim.keymap.set("n", "<leader>cf", function()
-		require("conform").format({
-			lsp_format = "fallback",
-		})
-	end, { desc = "Format current file" })
+	require("oil").setup()
+
+	vim.cmd.colorscheme("catppuccin")
 end
-
-require("config")

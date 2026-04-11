@@ -51,7 +51,7 @@
     "workbench.editor.decorations.colors": true,
     "workbench.editor.wrapTabs": true,
     "workbench.iconTheme": "material-icon-theme",
-    "workbench.colorTheme": "Kanagawa",
+    "workbench.colorTheme": "Light+",
     "workbench.list.smoothScrolling": true,
     "workbench.secondarySideBar.defaultVisibility": "hidden",
     "workbench.editorAssociations": {
@@ -149,4 +149,6 @@
     "problems.autoReveal": false,
     "terminal.integrated.initialHint": false,
     "rust-analyzer.runnables.askBeforeUpdateTest": false,
+    "extensions.allowOpenInModalEditor": true,
+    "workbench.editor.useModal": "some"
 }
