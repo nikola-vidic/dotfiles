@@ -146,4 +146,17 @@ else
 	require("oil").setup()
 
 	vim.cmd.colorscheme("catppuccin")
+
+	-- Enable for all clients
+	vim.lsp.on_type_formatting.enable()
+	-- Enable for a specific client
+	vim.api.nvim_create_autocmd('LspAttach', {
+		callback = function(ev)
+			local client_id = ev.data.client_id
+			local client = assert(vim.lsp.get_client_by_id(client_id))
+			if client.name == 'rust-analyzer' then
+				vim.lsp.on_type_formatting.enable(true, { client_id = client_id })
+			end
+		end,
+	})
 end
