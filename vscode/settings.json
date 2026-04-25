@@ -20,7 +20,7 @@
     "editor.cursorSmoothCaretAnimation": "on",
     "editor.autoClosingBrackets": "always",
     "editor.guides.indentation": true,
-    "editor.renderWhitespace": "none",
+    "editor.renderWhitespace": "all",
     "editor.accessibilitySupport": "off",
     "editor.lineNumbers": "relative",
     // diffEditor
@@ -35,15 +35,13 @@
     "files.trimFinalNewlines": true,
     "files.insertFinalNewline": true,
     "files.associations": {
-        "*.csproj": "msbuild",
-        "*.targets": "msbuild",
-        "*.props": "msbuild",
+        "*.{csproj,targets,props}": "msbuild",
+        "**/{tasks,files,defualts,meta}/*.yml": "ansible",
     },
     // appearance
-    "window.commandCenter": false,
+    // "window.commandCenter": false,
     "window.density.editorTabHeight": "compact",
     "window.restoreWindows": "none",
-    "window.menuBarVisibility": "hidden",
     //  workbench/style
     "workbench.editor.showTabs": "multiple",
     "workbench.startupEditor": "none",
@@ -56,7 +54,6 @@
     "workbench.secondarySideBar.defaultVisibility": "hidden",
     "workbench.editorAssociations": {
         "*.ipynb": "jupyter-notebook",
-        "*.pdf": "default",
     },
     // terminal
     "terminal.integrated.showExitAlert": false,
@@ -70,6 +67,7 @@
     "terminal.integrated.stickyScroll.enabled": false,
     "terminal.integrated.enableMultiLinePasteWarning": "never",
     "terminal.integrated.suggest.enabled": false,
+    "terminal.integrated.initialHint": false,
     // security
     "security.workspace.trust.banner": "never",
     "security.workspace.trust.enabled": false,
@@ -78,6 +76,11 @@
     "chat.agent.enabled": false,
     "chat.commandCenter.enabled": false,
     "chat.disableAIFeatures": true,
+    "gitlab.real-timeSecurityScan.scanFileOnSave": false,
+    "gitlab.duoChat.enabled": false,
+    "gitlab.duoCodeSuggestions.enabled": false,
+    "gitlab.duoAgentPlatform.enabled": false,
+    "gitlab.duo.enabledWithoutGitlabProject": false,
     // remote
     "remote.SSH.experimental.chat": false,
     "remote.autoForwardPortsSource": "hybrid",
@@ -95,11 +98,11 @@
     "powershell.codeFormatting.ignoreOneLineBlock": false,
     "powershell.pester.useLegacyCodeLens": false,
     "powershell.integratedConsole.suppressStartupBanner": true,
-    "powershell.integratedConsole.focusConsoleOnExecute": false,
     "powershell.integratedConsole.showOnStartup": false,
-    "powershell.scriptAnalysis.enable": true,
-    "powershell.pester.codeLens": false,
     "powershell.integratedConsole.startInBackground": true,
+    "powershell.pester.codeLens": false,
+    "powershell.integratedConsole.focusConsoleOnExecute": false,
+    "powershell.scriptAnalysis.enable": true,
     // rust
     "rust-analyzer.inlayHints.typeHints.enable": false,
     "rust-analyzer.inlayHints.chainingHints.enable": false,
@@ -112,10 +115,7 @@
     "rust-analyzer.testExplorer": true,
     "rust-analyzer.cargo.targetDir": "target/analyzer",
     "rust-analyzer.cargo.extraEnv": {
-        "RUSTC_BOOTSTRAP": "1",
-    },
-    "rust-analyzer.runnables.extraEnv": {
-        "RUSTC_BOOTSTRAP": "1",
+        "RUSTC_BOOTSTRAP": "1"
     },
     // Python
     "[python]": {
@@ -123,7 +123,11 @@
         "editor.formatOnPaste": true,
         "editor.formatOnSave": true,
     },
-    "python.analysis.diagnosticMode": "workspace",
+    "python.analysis.diagnosticMode": "openFilesOnly",
+    "ty.inlayHints.variableTypes": false,
+    "ty.inlayHints.callArgumentNames": false,
+    "python.analysis.typeCheckingMode": "off",
+    "python.analysis.enableParallelIndexing": true,
     // yaml
     "[yaml]": {
         "editor.formatOnPaste": true,
@@ -132,7 +136,6 @@
     "yaml.customTags": [
         "!reference sequence"
     ],
-    "yaml.format.singleQuote": true,
     // markdown
     "markdown.preview.scrollEditorWithPreview": false,
     "markdown.preview.scrollPreviewWithEditor": false,
@@ -141,14 +144,52 @@
     },
     // shell
     "[shellscript]": {
-        "editor.defaultFormatter": "foxundermoon.shell-format"
+        "editor.defaultFormatter": "mads-hartmann.bash-ide-vscode"
     },
     "workbench.settings.editor": "json",
+    "todo-tree.highlights.enabled": false,
+    "testing.coverageToolbarEnabled": true,
+    // files
+    "[msbuild]": {
+        "editor.defaultFormatter": "redhat.vscode-xml"
+    },
+    "[xml]": {
+        "editor.defaultFormatter": "redhat.vscode-xml"
+    },
     "testing.resultsView.layout": "treeLeft",
-    "problems.sortOrder": "position",
-    "problems.autoReveal": false,
-    "terminal.integrated.initialHint": false,
+    "remote.SSH.remotePlatform": {
+        "dev-3100": "windows",
+        "dev": "windows",
+        "test-dev": "windows",
+        "imageservice-dev": "windows",
+        "dev-debug": "windows",
+        "dev-debug-buildtools": "windows"
+    },
+    "errorLens.enabled": true,
+    "files.exclude": {
+        ".coverage**": true,
+        ".pytest_cache": true,
+        ".ruff_cache": true,
+        "**/__pycache__": true
+    },
+    "screencastMode.verticalOffset": 5,
+    "ansible.lightspeed.enabled": false,
+    "ansible.lightspeed.suggestions.enabled": false,
+    "debug.breakpointsView.presentation": "tree",
+    "dotnet.projects.enableAutomaticRestore": false,
     "rust-analyzer.runnables.askBeforeUpdateTest": false,
-    "extensions.allowOpenInModalEditor": true,
-    "workbench.editor.useModal": "some"
+    "dotnet.preferCSharpExtension": false,
+    "xml.symbols.maxItemsComputed": 10000,
+    "workbench.tree.renderIndentGuides": "always",
+    "rust-analyzer.rustfmt.rangeFormatting.enable": true,
+    "versionlens.dotnet.nuget.sources": [
+        "http://gitlab.dev.de.uhlmann-net.de/api/v4/projects/810/packages/nuget/index.json",
+        "http://gitlab.dev.de.uhlmann-net.de/api/v4/projects/811/packages/nuget/index.json",
+        "http://gitlab.dev.de.uhlmann-net.de/api/v4/projects/812/packages/nuget/index.json",
+        "https://pkgs.dev.azure.com/uhlmann/_packaging/px/nuget/v3/index.json",
+        "https://pkgs.dev.azure.com/uhlmann/_packaging/UHLMANN%40Local/nuget/v3/index.json",
+    ],
+    "versionlens.dotnet.files": "**/*.{csproj,fsproj,targets,props,vcxproj}",
+    "xml.format.maxLineWidth": 180,
+    "yaml.format.printWidth": 180,
 }

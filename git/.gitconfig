@@ -3,8 +3,11 @@
 	email = 16163816+ndz-v@users.noreply.github.com
 [core]
     autocrlf = false
-	editor = code --wait
-	excludesfile = "~/.config/dotfiles/.gitignore"
+    editor = code --wait
+    excludesFile = ~/.gitignore
+    longpaths = true
+    fsmonitor = true
+	hooksPath = ~/.config/dotfiles/git/hooks/
 [merge]
     tool = vscode
     conflictstyle = diff3
@@ -35,6 +38,7 @@
     autostash = true
 [push]
     default = current
+	autoSetupRemote = true
 [safe]
     directory = *
 [interactive]
