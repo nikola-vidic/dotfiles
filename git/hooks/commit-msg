@@ -1,0 +1,55 @@
+#!/usr/bin/env python
+
+import logging
+import re
+import sys
+from pathlib import Path
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(levelname)s - %(name)s - %(message)s",
+)
+
+COMMIT_TYPES = [
+    "build",
+    "chore",
+    "ci",
+    "docs",
+    "feat",
+    "fix",
+    "perf",
+    "refactor",
+    "revert",
+    "style",
+    "test",
+    "wip",
+]
+CONVENTIONAL_COMMIT_REGEX = re.compile(
+    rf"^({'|'.join(COMMIT_TYPES)})(\([a-z0-9\-\_]+\))?\!?:\s.+$",
+)
+
+
+def check_conventional_commit(commit_msg_filepath: str) -> int:
+    logger = logging.getLogger("Conventional Commit Message")
+
+    message_path = Path(commit_msg_filepath)
+    with message_path.open("r", encoding="UTF-8") as f:
+        message = f.readline().strip()
+
+    is_conventional_commit = bool(CONVENTIONAL_COMMIT_REGEX.match(message))
+
+    if not is_conventional_commit:
+        logger.error("Commit message does not comply:\n%s", message)
+        logger.info("Allowed types:\n%s", ", ".join(COMMIT_TYPES))
+        return 1
+
+    logger.info("Message follows conventional commit rules")
+    return 0
+
+
+def main():
+    sys.exit(check_conventional_commit(sys.argv[1]))
+
+
+if __name__ == "__main__":
+    sys.exit(main())
